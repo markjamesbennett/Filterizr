@@ -123,8 +123,8 @@
                 easing: 'ease-out',
                 filter: 'all',
                 filterOutCss: {
-                    'opacity': 0,
-                    'transform': 'scale(0.5)'
+                    'opacity': 0.25,
+                    'transform': 'scale(1)'
                 },
                 filterInCss: {
                     'opacity': 1,
@@ -1000,7 +1000,7 @@
             var self         = this,
                 filterOutCss = self._parent._makeDeepCopy(self._parent.options.filterOutCss);
             //Auto add translate to transform over user-defined filterOut styles
-            filterOutCss.transform += ' translate3d(' + self._lastPos.left + 'px,' + self._lastPos.top + 'px, 0)';
+            filterOutCss.transform += ' ';
             //Play animation
             self.css(filterOutCss);
             //Make unclickable
@@ -1025,7 +1025,7 @@
             //Make clickable
             self.css('pointer-events', 'auto');
             //Auto add translate to transform over user-defined filterIn styles
-            filterInCss.transform += ' translate3d(' + targetPos.left + 'px,' + targetPos.top + 'px, 0)';
+            filterInCss.transform += ' ';
             //Play animation
             self.css(filterInCss);
         }
